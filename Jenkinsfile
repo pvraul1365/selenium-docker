@@ -10,7 +10,7 @@ pipeline {
         }
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t=rperezv/selenium .'
+                sh 'docker build -t=rperezvicente/selenium .'
             }
         }
         stage('Push Docker Image') {
@@ -19,7 +19,7 @@ pipeline {
             }
             steps {
                 sh 'docker login -u $DOCKER_HUB_USR -p $DOCKER_HUB_PSW'
-                sh 'docker push rperezv/selenium'
+                sh 'docker push rperezvicente/selenium'
             }
         }
     }
